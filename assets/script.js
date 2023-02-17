@@ -12,46 +12,39 @@ const specialCharacters = "~!@#$%^&*()_+`-=";
 
 // Write password to the #password input
 function writePassword() {
+  // resets password options for each run through
+  passwordCharacterOptions = "";
   const passLength = prompt1()
-  console.log({passLength})
   if (isNaN(passLength) || passLength < 8 || passLength > 128) {
     return handleValidation("Length must be between 8 to 128. Please click ok and Generate Password again.")
   }
 
   const includeUppercase = prompt2()
-  console.log({includeUppercase})
   if (includeUppercase) {
     handleUppercase()
   }
-  console.log ({passwordCharacterOptions})
 
   const includeLowercase = prompt3()
-  console.log({includeLowercase})
   if (includeLowercase) {
     handleLowercase()
   }
-  console.log ({passwordCharacterOptions})
 
   const includeNumber = prompt4()
-  console.log({includeNumber})
   if (includeNumber) {
     handleNumbers()
   }
-  console.log ({passwordCharacterOptions})
 
   const includeSpecial = prompt5()
-  console.log({includeSpecial})
   if (includeSpecial) {
     handleSpecial()
   }
-  console.log ({passwordCharacterOptions})
+
   if (passwordCharacterOptions === "") {
-    handleValidation("At least one character type must be selected. Please click ok and try again.")
+    return handleValidation("At least one character type must be selected. Please click ok and try again.")
   }
 
   const password = generatePassword(passLength);
   const passwordText = document.querySelector("#password");
-  console.log({password})
 
   passwordText.value = password;
 
@@ -111,13 +104,11 @@ function handleValidation (errorMessage) {
 
 // Generate Password fuction
 function generatePassword(passLength) {
-  console.log({passLength})
   var generatedPassword = ""
   for (let i = 0; i < passLength; i++) {
     var randomNumber = Math.floor(Math.random() * passwordCharacterOptions.length);
     var randomCharacter = passwordCharacterOptions[randomNumber]
     generatedPassword += randomCharacter
-    console.log({randomCharacter, randomNumber})
   }
   return generatedPassword
 }
