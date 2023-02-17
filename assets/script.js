@@ -52,31 +52,31 @@ function writePassword() {
 
 // This is the first prompt asking user for pass length
 function prompt1 () {
-  const response = parseInt(window.prompt("Choose a password length between 8-128 characters 👇"))
+  const response = parseInt(prompt("Choose a password length between 8-128 characters 👇"))
   return response
 }
 
 // Second prompt, asking about Uppercase characters
 function prompt2 () {
-  const response = window.confirm("🤔 Would you like to include Uppercase characters?")
+  const response = confirm("🤔 Would you like to include Uppercase characters?")
   return response
 }
 
 // Third prompt, asking about Lowercase
 function prompt3 () {
-  const response = window.confirm("Would you like to include Lowercase characters? 🙃")
+  const response = confirm("Would you like to include Lowercase characters? 🙃")
   return response
 }
 
 // Fourth prompt re: Numbers
 function prompt4 () {
-  const response = window.confirm("🤓 Would you like to include Numbers?")
+  const response = confirm("🤓 Would you like to include Numbers?")
   return response
 }
 
 // Fifth prompt re: Special characters
 function prompt5 () {
-  const response = window.confirm("Would you like to include ✨Special✨ characters?")
+  const response = confirm("Would you like to include ✨Special✨ characters?")
   return response
 }
 
@@ -99,7 +99,7 @@ function handleSpecial() {
 
 // Error messages
 function handleValidation (errorMessage) {
-  return window.alert(errorMessage)
+  return alert(errorMessage)
 }
 
 // Generate Password fuction
