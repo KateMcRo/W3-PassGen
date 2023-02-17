@@ -15,7 +15,7 @@ function writePassword() {
   const passLength = prompt1()
   console.log({passLength})
   if (isNaN(passLength) || passLength < 8 || passLength > 128) {
-    return handleError("Length must be between 8 to 128. Please click ok and Generate Password again.")
+    return handleValidation("Length must be between 8 to 128. Please click ok and Generate Password again.")
   }
 
   const includeUppercase = prompt2()
@@ -46,7 +46,7 @@ function writePassword() {
   }
   console.log ({passwordCharacterOptions})
   if (passwordCharacterOptions === "") {
-    handleError("At least one character type must be selected. Please click ok and try again.")
+    handleValidation("At least one character type must be selected. Please click ok and try again.")
   }
 
   const password = generatePassword(passLength);
@@ -105,7 +105,7 @@ function handleSpecial() {
 }
 
 // Error messages
-function handleError (errorMessage) {
+function handleValidation (errorMessage) {
   return window.alert(errorMessage)
 }
 
