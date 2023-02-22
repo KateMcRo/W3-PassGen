@@ -40,6 +40,8 @@ function writePassword() {
   }
 
   if (passwordCharacterOptions === "") {
+    const passwordText = document.querySelector("#password");
+    passwordText.value = "";
     return handleValidation("At least one character type must be selected. Please click ok and try again.")
   }
 
