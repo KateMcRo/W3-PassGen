@@ -11,7 +11,11 @@ The biggest takeaway for me was breaking things down into smaller parts and addr
 Click the red "Generate Password" button and respond to the prompts. If an error is given, try again. 
 Once the selections are made correctly, a random password will be printed in the box as seen in the screenshot below.
 
-![Password Generator Screenshot](assets/passwordGenerator.png)
+![Password Generator Screenshot](assets/passGenV2.png)
+
+## Features
+
+Button was added to allow the user to copy the newly generated password to the clipboard.
 
 ## Deployment
 
