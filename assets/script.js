@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy")
 
 // Where all password options will be held
 var passwordCharacterOptions = "";
@@ -49,7 +50,16 @@ function writePassword() {
   const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+}
 
+// Function to copy password to clipboard
+async function copyPassword() {
+  var copyText = document.getElementById("password");
+  if (copyText.value === "") {
+  return handleValidation ("Please generate a password first.")    
+  }
+  await navigator.clipboard.writeText(copyText.value)
+  alert("Copied Password:" + copyText.value)
 }
 
 // This is the first prompt asking user for pass length
@@ -115,5 +125,7 @@ function generatePassword(passLength) {
   return generatedPassword
 }
 
-// Add event listener to generate button
+// Add event listeners to buttons
 generateBtn.addEventListener("click", writePassword);
+
+copyBtn.addEventListener("click", copyPassword);
